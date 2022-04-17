@@ -10,6 +10,14 @@
 	},
 	"author": "Emilio Barradas",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cerezadev/cereza-js.git"
+	},
+	"keywords": [
+		"pub/sub"
+	],
+	"homepage": "https://cereza.dev",
 	"dependencies": {
 		"@types/ws": "^8.5.3",
 		"isomorphic-ws": "^4.0.1",
