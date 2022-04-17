@@ -1,0 +1,17 @@
+{
+	"name": "cereza",
+	"version": "0.0.1",
+	"description": "Easy pub/sub messaging.",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "tsc",
+		"dev": "nodemon -w src -e ts -x npm run build"
+	},
+	"author": "Emilio Barradas",
+	"license": "MIT",
+	"dependencies": {
+		"@types/ws": "^8.5.3",
+		"isomorphic-ws": "^4.0.1",
+		"ws": "^8.5.0"
+	}
+}
