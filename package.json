@@ -1,11 +1,12 @@
 {
 	"name": "cereza",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Easy pub/sub messaging.",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "tsc",
-		"dev": "nodemon -w src -e ts -x npm run build"
+		"dev": "nodemon -w src -e ts -x npm run build",
+		"release": "release-it"
 	},
 	"author": "Emilio Barradas",
 	"license": "MIT",
@@ -13,5 +14,8 @@
 		"@types/ws": "^8.5.3",
 		"isomorphic-ws": "^4.0.1",
 		"ws": "^8.5.0"
+	},
+	"devDependencies": {
+		"release-it": "^14.14.2"
 	}
 }
