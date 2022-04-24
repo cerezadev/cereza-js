@@ -3,6 +3,7 @@ import Route from "./Route";
 import WebSocketClient from "./socket/WebSocketClient";
 import { SubscriberFn } from "./utils/subscriber/SubscriberFn";
 import SubscriberManager from "./utils/subscriber/SubscriberManager";
+import { UnsubscriberFn } from "./utils/subscriber/UnsubscriberFn";
 
 export default class CerezaApp {
 	private readonly options: AppOptions;
@@ -24,7 +25,7 @@ export default class CerezaApp {
 		);
 	}
 
-	private subscribe<T>(topic: string, fn: SubscriberFn<T>) {
+	private subscribe<T>(topic: string, fn: SubscriberFn<T>): UnsubscriberFn {
 		this.topicSubscribers.subscribe(topic, fn);
 		this.register(topic);
 

@@ -1,14 +1,18 @@
 import { SubscriberFn } from "./utils/subscriber/SubscriberFn";
+import { UnsubscriberFn } from "./utils/subscriber/UnsubscriberFn";
 
 export default class Route<T> {
 	private readonly topic: string;
 	private readonly sendFn: (topic: string, data: any) => void;
-	private readonly subscribeFn: (topic: string, fn: SubscriberFn<T>) => void;
+	private readonly subscribeFn: (
+		topic: string,
+		fn: SubscriberFn<T>
+	) => UnsubscriberFn;
 
 	constructor(
 		topic: string,
 		sendFn: (topic: string, data: any) => void,
-		subscribeFn: (topic: string, fn: SubscriberFn<T>) => void
+		subscribeFn: (topic: string, fn: SubscriberFn<T>) => UnsubscriberFn
 	) {
 		this.topic = topic;
 		this.sendFn = sendFn;
@@ -20,6 +24,6 @@ export default class Route<T> {
 	}
 
 	public subscribe(fn: SubscriberFn<T>) {
-		this.subscribeFn(this.topic, fn);
+		return this.subscribeFn(this.topic, fn);
 	}
 }
