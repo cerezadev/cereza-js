@@ -1,6 +1,6 @@
 {
 	"name": "cereza",
-	"version": "0.1.2-beta.5",
+	"version": "0.1.2-beta.6",
 	"description": "Easy pub/sub messaging.",
 	"main": "build/index.js",
 	"scripts": {
